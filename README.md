@@ -124,9 +124,6 @@ Cloud deployment
 
 
 Author
-Devadharshini S
+22MIA1176
 Integrated M.Tech CSE (Business Analytics)
 VIT Chennai
-
-License
-This project is developed for educational and academic purposes.
