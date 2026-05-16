@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Dashboard</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="sidebar">
+
+    <h2>🚚 Scheduler</h2>
+
+    <a href="/dashboard">Dashboard</a>
+    <a href="/schedule">Schedule</a>
+    <a href="/vehicles">Vehicles</a>
+    <a href="/maintenance">Maintenance</a>
+    <a href="/logs">Logs</a>
+
+</div>
+
+<div class="main">
+
+    <h1>Dashboard</h1>
+
+    <div class="stats-container">
+
+        <div class="stats-card">
+            <h2>24</h2>
+            <p>Total Vehicles</p>
+        </div>
+
+        <div class="stats-card">
+            <h2>5</h2>
+            <p>Active Depots</p>
+        </div>
+
+        <div class="stats-card">
+            <h2>12</h2>
+            <p>Maintenance Tasks</p>
+        </div>
+
+        <div class="stats-card">
+            <h2>97%</h2>
+            <p>System Efficiency</p>
+        </div>
+
+    </div>
+
+    <div class="card">
+
+        <div>
+            <h2>Vehicle Maintenance System</h2>
+
+            <p>
+                Manage vehicles, schedules,
+                maintenance tracking and depot operations.
+            </p>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

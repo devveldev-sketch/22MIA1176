@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Vehicle Maintenance Schedule</title>
+
+    <style>
+
+        body{
+            font-family: Arial;
+            background:#eef2ff;
+            padding:40px;
+        }
+
+        h1{
+            color:#4f46e5;
+        }
+
+        .card{
+            background:white;
+            padding:25px;
+            border-radius:15px;
+            margin-bottom:20px;
+            box-shadow:0px 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .hours{
+            font-size:30px;
+            font-weight:bold;
+            color:#2563eb;
+        }
+
+        .impact{
+            font-size:30px;
+            font-weight:bold;
+            color:#16a34a;
+        }
+
+        table{
+            width:100%;
+            border-collapse: collapse;
+            margin-top:20px;
+        }
+
+        th{
+            background:#4f46e5;
+            color:white;
+            padding:15px;
+        }
+
+        td{
+            padding:15px;
+            background:white;
+            border-bottom:1px solid #ddd;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <h1>Vehicle Maintenance Schedule</h1>
+
+    <div class="card">
+
+        <h2>Total Hours Used</h2>
+
+        <div class="hours">
+            {{ result.total_hours }}
+        </div>
+
+    </div>
+
+    <div class="card">
+
+        <h2>Total Impact Prevented</h2>
+
+        <div class="impact">
+            {{ result.total_impact }}
+        </div>
+
+    </div>
+
+    <div class="card">
+
+        <h2>Selected Vehicles</h2>
+
+        <table>
+
+            <tr>
+                <th>Vehicle ID</th>
+                <th>Maintenance Hours</th>
+                <th>Impact Level</th>
+            </tr>
+
+            {% for vehicle in result.selected_vehicles %}
+
+            <tr>
+
+                <td>{{ vehicle.VehicleID }}</td>
+                <td>{{ vehicle.MaintenanceHours }}</td>
+                <td>{{ vehicle.ImpactLevel }}</td>
+
+            </tr>
+
+            {% endfor %}
+
+        </table>
+
+    </div>
+
+</body>
+
+</html>

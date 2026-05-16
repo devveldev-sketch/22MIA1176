@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Logs</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="sidebar">
+
+    <h2>Scheduler</h2>
+
+    <a href="/">Dashboard</a>
+    <a href="/schedule">Schedule</a>
+    <a href="/vehicles">Vehicles</a>
+    <a href="/maintenance">Maintenance</a>
+    <a href="/logs">Logs</a>
+
+</div>
+
+<div class="main">
+
+    <div class="topbar">
+
+        <h1>System Logs</h1>
+
+        <a class="refresh-btn"
+           href="/logs">
+           Refresh
+        </a>
+
+    </div>
+
+    {% for log in logs %}
+
+    <div class="log-card">
+
+        {{ log }}
+
+    </div>
+
+    {% endfor %}
+
+</div>
+
+</body>
+</html>

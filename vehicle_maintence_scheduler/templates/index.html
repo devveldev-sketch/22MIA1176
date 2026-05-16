@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Maintenance Scheduler</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="sidebar">
+    <h2>🚚 Scheduler</h2>
+
+    <ul>
+        <li class="active">Dashboard</li>
+        <li>Schedule</li>
+        <li>Vehicles</li>
+        <li>Maintenance</li>
+        <li>Logs</li>
+    </ul>
+</div>
+
+<div class="main-content">
+
+    <div class="topbar">
+        <h1>Vehicle Maintenance Scheduler</h1>
+
+        <button class="refresh-btn" onclick="location.reload()">
+            Refresh
+        </button>
+    </div>
+
+    <div class="success-box">
+        Successfully fetched depot data from API
+    </div>
+
+    <div class="cards-container">
+
+        {% for depot in depots %}
+
+        <div class="card">
+
+            <div class="left-section">
+                <div class="circle">
+                    {{ depot.DepotID }}
+                </div>
+
+                <div>
+                    <h2>Depot ID: {{ depot.DepotID }}</h2>
+                    <p>Mechanic Hours Available</p>
+                </div>
+            </div>
+
+            <div class="hours">
+                {{ depot.MechanicHours }}
+            </div>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</div>
+
+</body>
+</html>

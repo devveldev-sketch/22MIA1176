@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vehicles</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="sidebar">
+
+    <h2>Scheduler</h2>
+
+    <a href="/">Dashboard</a>
+    <a href="/schedule">Schedule</a>
+    <a href="/vehicles">Vehicles</a>
+    <a href="/maintenance">Maintenance</a>
+    <a href="/logs">Logs</a>
+
+</div>
+
+<div class="main">
+
+    <div class="topbar">
+
+        <h1>Vehicle Tasks</h1>
+
+        <a class="refresh-btn"
+           href="/vehicles">
+           Refresh
+        </a>
+
+    </div>
+
+    <table>
+
+        <tr>
+            <th>Task ID</th>
+            <th>Duration</th>
+            <th>Impact</th>
+        </tr>
+
+        {% for vehicle in vehicles %}
+
+        <tr>
+
+            <td>{{ vehicle.TaskID }}</td>
+            <td>{{ vehicle.Duration }}</td>
+            <td>{{ vehicle.Impact }}</td>
+
+        </tr>
+
+        {% endfor %}
+
+    </table>
+
+</div>
+
+</body>
+</html>

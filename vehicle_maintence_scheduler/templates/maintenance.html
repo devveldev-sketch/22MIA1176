@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Maintenance</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="sidebar">
+
+    <h2>🚚 Scheduler</h2>
+
+    <a href="/dashboard">Dashboard</a>
+    <a href="/schedule">Schedule</a>
+    <a href="/vehicles">Vehicles</a>
+    <a href="/maintenance">Maintenance</a>
+    <a href="/logs">Logs</a>
+
+</div>
+
+<div class="main">
+
+    <h1>Maintenance</h1>
+
+    {% for item in logs %}
+
+    <div class="maintenance-card">
+
+        <div>
+
+            <h2>🛠 {{ item.vehicle }}</h2>
+
+            <p>Maintenance Date</p>
+
+        </div>
+
+        <div class="date-box">
+            {{ item.date }}
+        </div>
+
+    </div>
+
+    {% endfor %}
+
+</div>
+
+</body>
+</html>
